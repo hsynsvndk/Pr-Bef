@@ -1,0 +1,123 @@
+<!-- <div class="container-fluid">
+  <div class="row mt-5">
+    <div class="col"></div>
+    <div class="col-4">
+      <div class="card shadow">
+        <div class="card-body">
+          <form>
+            <div class="mb-3">
+              <h4 class="text-danger text-muted">Welcome</h4>
+            </div>
+            <button
+              type="button"
+              class="btn btn-info text-center"
+              (click)="logout()"
+            >
+              Logout
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col"></div>
+  </div>
+</div>
+ -->
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4 mt-5">
+      <div class="card border-0 shadow p-3">
+        <div class="form-floating mb-3 text-center">
+          <h5 class="text-center text-warning">Add Student</h5>
+        </div>
+        <div class="form-floating mb-3">
+          <input
+            type="firstname"
+            class="form-control"
+            id="firstname"
+            placeholder="firstname"
+            name="firstname"
+            [(ngModel)]="first_name"
+          />
+          <label for="firstname">First Name</label>
+        </div>
+        <div class="form-floating">
+          <input
+            type="lastname"
+            class="form-control"
+            id="lastname"
+            placeholder="lastname"
+            name="lastname"
+            [(ngModel)]="last_name"
+          />
+          <label for="lastname">Last Name</label>
+        </div>
+
+        <div class="form-floating mb-3">
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="name@example.com"
+            name="email"
+            [(ngModel)]="email"
+          />
+          <label for="email">Email address</label>
+        </div>
+        <div class="form-floating">
+          <input
+            type="mobile"
+            class="form-control"
+            id="mobile"
+            placeholder="mobile"
+            name="mobile"
+            [(ngModel)]="mobile"
+          />
+          <label for="mobile">Mobile</label>
+        </div>
+
+        <button
+          type="button"
+          class="btn btn-outline-success"
+          (click)="addStudent()"
+        >
+          Add Student
+        </button>
+      </div>
+    </div>
+    <div class="col-md-8 mt-2">
+      <h5 class="text-danger">Student list</h5>
+      <div class="card p-3 shadow">
+        <div class="card-body">
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Mobil</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let student of studentList" >
+                <td >{{student.first_name}}</td>
+                <td >{{student.last_name}}</td>
+                <td >{{student.email}}</td>
+                <td >{{student.mobile}}</td>
+                <td >
+                  <button class="btn btn-outline-danger" (click)="deletetudent(student)">Delete</button>
+                </td>
+
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
